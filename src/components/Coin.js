@@ -10,7 +10,8 @@ const Coin = ({ image, marketCap, price, priceChange, symbol, name }) => {
       <span className={styles.name}>{name}</span>
       <span className={styles.symbol}>{symbol.toUpperCase()}</span>
       <span className={styles.currentPrice}>
-        $ {price ? price.toLocaleString() : "N/A"}
+        ${" "}
+        {price !== null && price !== undefined ? price.toLocaleString() : "N/A"}
       </span>
       <span
         className={
@@ -27,7 +28,10 @@ const Coin = ({ image, marketCap, price, priceChange, symbol, name }) => {
         %
       </span>
       <span className={styles.marketCap}>
-        $ {marketCap ? marketCap.toLocaleString() : "N/A"}
+        ${" "}
+        {marketCap !== null && marketCap !== undefined
+          ? marketCap.toLocaleString()
+          : "N/A"}
       </span>
     </div>
   );
